@@ -42,7 +42,7 @@ function Modal(){
 
                 <FiArrowLeft onClick={ () =>{
                     if(m <= 0){
-                        setM(all_month.length - 1)
+                        setM(all_month.length)
                     }
                     else{
                         setM(m - 1)
