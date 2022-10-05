@@ -4,6 +4,8 @@ import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
 
 function Modal(){
 
+    const date = new Date();
+
     var all_month = [
                     "Janeiro" ,"Fevereiro","Março",
                     "Abril" ,"Maio" ,"Junho" ,"Julho",
@@ -19,7 +21,7 @@ function Modal(){
 
     const[m,setM] = useState(0)
 
-    const[current_year,setCurrent_Year] = useState(2022)
+    const[current_year,setCurrent_Year] = useState(date.getFullYear())
 
     var current_month = all_month[m]
 
