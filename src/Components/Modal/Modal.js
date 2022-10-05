@@ -53,7 +53,6 @@ function Modal(){
                 <h1>{current_month}</h1>
 
                 <FiArrowRight onClick={ () =>{
-                    
                     if(m >= all_month.length - 1){
                         setM(0)
                     }
@@ -70,10 +69,7 @@ function Modal(){
                             setDay(item)
                             setMonth(current_month)
                             setYear(current_year)
-                            console.log("Day " + day)
-                            console.log( "Month " + month)
-                            console.log("Year " + year)
-                        }}>
+                            }}>
                             <h3>{item}</h3>
                         </div>
                     )
