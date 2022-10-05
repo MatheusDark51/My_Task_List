@@ -3,7 +3,7 @@ import {myContext} from "../../Context/index.js"
 import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
 
 function Modal(){
-
+    
     var all_month = ["janeiro" ,"fevereiro","Março",
                     "Abril" ,"Maio" ,"junho" ,"Julho",
                     "Agosto" ,"Setembro" ,"Outubro",
@@ -17,8 +17,24 @@ function Modal(){
 
     var days = ["1","2","3"]
 
+    var d = []
+
+    function carregarDays(count){
+        for(var i = 0;i<count;i++){
+            var a = i +1
+            d[i] = a.toString()
+        }
+        console.log(d)
+    }
+
+    useEffect(() =>{
+        return(
+            carregarDays(10)
+        )
+    },[])
+
     const{
-        tit,settit,tex,settex,year,month,day,
+        tit,settit,tex,settex,
         setDay,setMonth,setYear,
         AddDoc,setActiveModal
     } = useContext(myContext);
@@ -47,7 +63,6 @@ function Modal(){
                     else{
                         setM(m - 1)
                     }
-                    console.log(m)
                 }} />
 
                 <h1>{current_month}</h1>
@@ -59,13 +74,11 @@ function Modal(){
                     else{
                         setM(m + 1)
                     }
-
-                    console.log(m)
                 }} />
 
-                {days.map((item,index) =>{
+                {days.map((item) =>{
                     return(
-                        <div key={index} onClick={() =>{
+                        <div key={item} onClick={() =>{
                             setDay(item)
                             setMonth(current_month)
                             setYear(current_year)

@@ -8,7 +8,8 @@ function ListaDeDados(){
     const
     {
         list,setList,CarregarDados,
-        Delete,Modify,activeModal,setActiveModal
+        Delete,Modify,activeModal,
+        setActiveModal
 
     } = useContext(myContext);
 
@@ -47,7 +48,7 @@ function ListaDeDados(){
             <div>
                 
                 <BiPlus onClick={ () =>{
-                    
+
                     setActiveModal(true)
 
                 }}/>
