@@ -4,6 +4,12 @@ import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
 
 function Modal(){
 
+    const{
+        tit,settit,tex,settex,
+        setDay,setMonth,setYear,
+        AddDoc,setActiveModal
+    } = useContext(myContext);
+
     const date = new Date();
 
     var all_month = [
@@ -13,7 +19,7 @@ function Modal(){
                     "Novembro" ,"Dezembro"
                     ]
 
-    var all_days = [31,24,26,34]
+    var all_days = [31,24,26,34,20,11,27,22,14,21,30,29]
 
     var days_array = []
 
@@ -37,12 +43,6 @@ function Modal(){
         LoadDays(all_days[m])
     },[m])
 
-    const{
-        tit,settit,tex,settex,
-        setDay,setMonth,setYear,
-        AddDoc,setActiveModal
-    } = useContext(myContext);
-
     return(
         <div>
             <div>
@@ -62,7 +62,7 @@ function Modal(){
 
                 <FiArrowLeft onClick={ () =>{
                     if(m <= 0){
-                        setM(all_month.length - 1)
+                        setMonth(all_month.length - 1)
                     }
                     else{
                         setM(m - 1)
@@ -72,7 +72,7 @@ function Modal(){
                 <h1>{current_month}</h1>
 
                 <FiArrowRight onClick={ () =>{
-                    if(m >= all_month.length - 1){
+                    if(m >= all_month.length){
                         setM(0)
                     }
                     else{
@@ -102,6 +102,8 @@ function Modal(){
                     setDay();
                     setMonth();
                     setYear(2022);
+
+                    console.log(date.getMonth() + 1)
                 }}>
                     Cancelar
                 </button>
