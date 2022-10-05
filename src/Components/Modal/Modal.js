@@ -14,24 +14,24 @@ function Modal(){
     const[m,setM] = useState(0)
 
     var current_month = all_month[m]
+    
+    var all_days = [31,24,26,34]
 
-    var days = ["1","2","3"]
+    var days_array = []
 
-    var d = []
-
-    function carregarDays(count){
-        for(var i = 0;i<count;i++){
-            var a = i +1
-            d[i] = a.toString()
-        }
-        console.log(d)
-    }
-
+    const[days,setDays] = useState(days_array)
+    
     useEffect(() =>{
-        return(
-            carregarDays(10)
-        )
-    },[])
+
+        function carregarDays(count){
+            for(var i = 0;i<count;i++){
+                var a = i +1
+                days_array[i] = a.toString()
+            }
+            setDays(days_array)
+        }
+        carregarDays(all_days[m])
+    },[m])
 
     const{
         tit,settit,tex,settex,
@@ -50,7 +50,7 @@ function Modal(){
 
             <label> Texto </label>
             <input placeholder="Digite o Texto" 
-                value={tex} 
+                value={tex}
                 onChange={(e) => {settex(e.target.value)}}
             />
             </div>
