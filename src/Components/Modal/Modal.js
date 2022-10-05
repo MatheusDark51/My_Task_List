@@ -4,33 +4,35 @@ import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
 
 function Modal(){
     
-    var all_month = ["janeiro" ,"fevereiro","Março",
-                    "Abril" ,"Maio" ,"junho" ,"Julho",
+    var all_month = [
+                    "Janeiro" ,"Fevereiro","Março",
+                    "Abril" ,"Maio" ,"Junho" ,"Julho",
                     "Agosto" ,"Setembro" ,"Outubro",
-                    "Novembro" ,"Dezembro"]
+                    "Novembro" ,"Dezembro"
+                    ]
 
-    const[current_year,setCurrent_Year] = useState(2022)
-    
-    const[m,setM] = useState(0)
-
-    var current_month = all_month[m]
-    
     var all_days = [31,24,26,34]
 
     var days_array = []
 
     const[days,setDays] = useState(days_array)
+
+    const[m,setM] = useState(0)
     
+    const[current_year,setCurrent_Year] = useState(2022)
+
+    var current_month = all_month[m]
+
     useEffect(() =>{
 
-        function carregarDays(count){
+        function LoadDays(count){
             for(var i = 0;i<count;i++){
                 var a = i +1
                 days_array[i] = a.toString()
             }
             setDays(days_array)
         }
-        carregarDays(all_days[m])
+        LoadDays(all_days[m])
     },[m])
 
     const{
