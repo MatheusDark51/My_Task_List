@@ -23,13 +23,13 @@ function Modal(){
 
     var days_array = []
 
-    const[days,setDays] = useState(days_array)
+    const[current_days,setCurrent_Days] = useState(days_array)
 
-    const[m,setM] = useState(0)
+    const[current_Month,setCurrent_Month] = useState(0)
 
-    const[current_year,setCurrent_Year] = useState(date.getFullYear())
+    const[current_Year,setCurrent_Year] = useState(date.getFullYear())
 
-    var current_month = all_month[m]
+    var month_to_render = all_month[current_Month]
 
     useEffect(() =>{
 
@@ -38,10 +38,10 @@ function Modal(){
                 var a = i +1
                 days_array[i] = a.toString()
             }
-            setDays(days_array)
+            setCurrent_Days(days_array)
         }
-        LoadDays(all_days[m])
-    },[m])
+        LoadDays(all_days[current_Month])
+    },[current_Month])
 
     return(
         <div>
@@ -61,31 +61,33 @@ function Modal(){
             <div>
 
                 <FiArrowLeft onClick={ () =>{
-                    if(m <= 0){
-                        setMonth(all_month.length - 1)
+                    if(current_Month <= 0){
+                        setCurrent_Month(all_month.length - 1)
                     }
                     else{
-                        setM(m - 1)
+                        setCurrent_Month(current_Month - 1)
                     }
                 }} />
 
-                <h1>{current_month}</h1>
+                <h1>{month_to_render}</h1>
 
                 <FiArrowRight onClick={ () =>{
-                    if(m >= all_month.length){
-                        setM(0)
+                    
+                    if(current_Month >= all_month.length - 1){
+                        setCurrent_Month(0)
+                        
                     }
                     else{
-                        setM(m + 1)
+                        setCurrent_Month(current_Month + 1)
                     }
                 }} />
 
-                {days.map((item) =>{
+                {current_days.map((item) =>{
                     return(
                         <div key={item} onClick={() =>{
                             setDay(item)
-                            setMonth(current_month)
-                            setYear(current_year)
+                            setMonth(current_Month)
+                            setYear(current_Year)
                             }}>
                             <h3>{item}</h3>
                         </div>
@@ -102,18 +104,18 @@ function Modal(){
                     setDay();
                     setMonth();
                     setYear(2022);
-
-                    console.log(date.getMonth() + 1)
                 }}>
                     Cancelar
                 </button>
 
                 <button onClick={ () =>{
                     setActiveModal(false)
+
                     AddDoc();
+
                     setDay();
                     setMonth();
-                    setYear(2022)
+                    setYear(2022);
                 }}>
                     Adicionar
                 </button>
