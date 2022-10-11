@@ -19,13 +19,13 @@ function Modal(){
                     "Novembro" ,"Dezembro"
                     ]
 
-    var all_days = [31,24,26,34,20,11,27,22,14,21,30,29]
+    var all_days = [31,29,31,30,31,30,31,31,30,31,30,31,]
 
     var days_array = []
 
     const[current_days,setCurrent_Days] = useState(days_array)
 
-    const[current_Month,setCurrent_Month] = useState(0)
+    const[current_Month,setCurrent_Month] = useState(date.getMonth())
 
     const[current_Year,setCurrent_Year] = useState(date.getFullYear())
 
@@ -63,11 +63,13 @@ function Modal(){
                 <FiArrowLeft onClick={ () =>{
                     if(current_Month <= 0){
                         setCurrent_Month(all_month.length - 1)
+                        setCurrent_Year(current_Year - 1)
                     }
                     else{
                         setCurrent_Month(current_Month - 1)
                     }
                 }} />
+                <h3>{current_Year}</h3>
 
                 <h1>{month_to_render}</h1>
 
@@ -75,7 +77,7 @@ function Modal(){
                     
                     if(current_Month >= all_month.length - 1){
                         setCurrent_Month(0)
-                        
+                        setCurrent_Year(current_Year + 1)
                     }
                     else{
                         setCurrent_Month(current_Month + 1)
@@ -86,7 +88,7 @@ function Modal(){
                     return(
                         <div key={item} onClick={() =>{
                             setDay(item)
-                            setMonth(current_Month)
+                            setMonth(month_to_render)
                             setYear(current_Year)
                             }}>
                             <h3>{item}</h3>
@@ -103,7 +105,7 @@ function Modal(){
 
                     setDay();
                     setMonth();
-                    setYear(2022);
+                    setYear();
                 }}>
                     Cancelar
                 </button>
@@ -112,12 +114,10 @@ function Modal(){
                     setActiveModal(false)
 
                     AddDoc();
-
-                    setDay();
-                    setMonth();
-                    setYear(2022);
+                    
                 }}>
                     Adicionar
+                    
                 </button>
             </div>
             
