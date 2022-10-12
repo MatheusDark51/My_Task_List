@@ -89,7 +89,7 @@ function Modal(){
                 <div className="Calendar">
                     {current_days.map((item) =>{
                         return(
-                            <div key={item} onClick={(d) =>{
+                            <div id="test" key={item} onClick={() =>{
                                 setDay(item)
                                 setMonth(month_to_render)
                                 setYear(current_Year)
