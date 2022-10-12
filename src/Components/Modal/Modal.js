@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import {myContext} from "../../Context/index.js"
 import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
+import style from "../../StylesSheets/style.css"
 
 function Modal(){
 
@@ -44,7 +45,7 @@ function Modal(){
     },[current_Month])
 
     return(
-        <div>
+        <div className="Modal">
             <div>
                 <label> Titulo </label>
                 <input placeholder="Digite o Titulo" 
@@ -60,7 +61,7 @@ function Modal(){
 
             <div>
 
-                <FiArrowLeft onClick={ () =>{
+                <FiArrowLeft className="Arrow" onClick={ () =>{
                     if(current_Month <= 0){
                         setCurrent_Month(all_month.length - 1)
                         setCurrent_Year(current_Year - 1)
@@ -69,11 +70,12 @@ function Modal(){
                         setCurrent_Month(current_Month - 1)
                     }
                 }} />
+
                 <h3>{current_Year}</h3>
 
                 <h1>{month_to_render}</h1>
 
-                <FiArrowRight onClick={ () =>{
+                <FiArrowRight className="Arrow" onClick={ () =>{
                     
                     if(current_Month >= all_month.length - 1){
                         setCurrent_Month(0)
@@ -84,17 +86,19 @@ function Modal(){
                     }
                 }} />
 
-                {current_days.map((item) =>{
-                    return(
-                        <div key={item} onClick={() =>{
-                            setDay(item)
-                            setMonth(month_to_render)
-                            setYear(current_Year)
-                            }}>
-                            <h3>{item}</h3>
-                        </div>
-                    )
-                })}
+                <div className="Calendar">
+                    {current_days.map((item) =>{
+                        return(
+                            <div key={item} onClick={(d) =>{
+                                setDay(item)
+                                setMonth(month_to_render)
+                                setYear(current_Year)
+                                }}>
+                                <h3>{item}</h3>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
             <div>
                 <button onClick={ () =>{
