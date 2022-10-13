@@ -1,18 +1,33 @@
 .Arrow{
     color: red;
 }
+section{
+    background-color:rgba(250, 250, 250, 0.5) ;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .Modal{
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    max-width: 500px;
+    height: 550px;
+    max-height: 550px;
     text-align: center;
     background-color: blue;
 }
 .Calendar{
+    width: 50%;
+    height: 50%;
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto auto auto;
     background-color: #2196F3;
     gap: 5px;
-    padding: 10px;
+    padding: 8px;
 }
 .Calendar :hover{
     cursor: pointer;
@@ -22,8 +37,17 @@
 }
 .Calendar div{
     background-color: white;
-    width: 50px;
+    width: 100%;
+    height: 100%;
 }
 .teste{
     background-color: red;
+}
+.Text{
+    background-color: red;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

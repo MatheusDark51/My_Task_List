@@ -6,7 +6,7 @@ import style from "../../StylesSheets/style.css"
 function Modal(){
 
     const{
-        tit,settit,tex,settex,
+        tit,settit,
         setDay,setMonth,setYear,
         AddDoc,setActiveModal
     } = useContext(myContext);
@@ -45,87 +45,83 @@ function Modal(){
     },[current_Month])
 
     return(
-        <div className="Modal">
-            <div>
-                <label> Titulo </label>
-                <input placeholder="Digite o Titulo" 
-                    value={tit} 
-                    onChange={(e) => {settit(e.target.value)}}
-                />
-                <label> Texto </label>
-                <input placeholder="Digite o Texto" 
-                    value={tex}
-                    onChange={(e) => {settex(e.target.value)}}
-                />
-            </div>
+        <section>
+            <div className="Modal">
+                <div className="Text">
+                    <label> Titulo </label>
+                    <input placeholder="Digite o Titulo da Tarefa" 
+                        value={tit} 
+                        onChange={(e) => {settit(e.target.value)}}
+                    />
+                </div>
 
-            <div>
+                <div>
 
-                <FiArrowLeft className="Arrow" onClick={ () =>{
-                    if(current_Month <= 0){
-                        setCurrent_Month(all_month.length - 1)
-                        setCurrent_Year(current_Year - 1)
-                    }
-                    else{
-                        setCurrent_Month(current_Month - 1)
-                    }
-                }} />
+                    <FiArrowLeft className="Arrow" onClick={ () =>{
+                        if(current_Month <= 0){
+                            setCurrent_Month(all_month.length - 1)
+                            setCurrent_Year(current_Year - 1)
+                        }
+                        else{
+                            setCurrent_Month(current_Month - 1)
+                        }
+                    }} />
 
-                <h3>{current_Year}</h3>
+                    <h3>{current_Year}</h3>
 
-                <h1>{month_to_render}</h1>
+                    <h1>{month_to_render}</h1>
 
-                <FiArrowRight className="Arrow" onClick={ () =>{
+                    <FiArrowRight className="Arrow" onClick={ () =>{
+                        
+                        if(current_Month >= all_month.length - 1){
+                            setCurrent_Month(0)
+                            setCurrent_Year(current_Year + 1)
+                        }
+                        else{
+                            setCurrent_Month(current_Month + 1)
+                        }
+                    }} />
+
+                    <div className="Calendar">
+                        {current_days.map((item) =>{
+                            return(
+                                <div id="test" key={item} onClick={() =>{
+                                    setDay(item)
+                                    setMonth(month_to_render)
+                                    setYear(current_Year)
+                                    }}>
+                                    <h3>{item}</h3>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+
+               <div>
+                    <button onClick={ () =>{
+                        setActiveModal(false)
                     
-                    if(current_Month >= all_month.length - 1){
-                        setCurrent_Month(0)
-                        setCurrent_Year(current_Year + 1)
-                    }
-                    else{
-                        setCurrent_Month(current_Month + 1)
-                    }
-                }} />
+                        settit("");
 
-                <div className="Calendar">
-                    {current_days.map((item) =>{
-                        return(
-                            <div id="test" key={item} onClick={() =>{
-                                setDay(item)
-                                setMonth(month_to_render)
-                                setYear(current_Year)
-                                }}>
-                                <h3>{item}</h3>
-                            </div>
-                        )
-                    })}
+                        setDay();
+                        setMonth();
+                        setYear();
+                    }}>
+                        Cancelar
+                    </button>
+
+                    <button onClick={ () =>{
+                        setActiveModal(false)
+
+                        AddDoc();
+                        
+                    }}>
+                        Adicionar
+                        
+                    </button>
                 </div>
             </div>
-            <div>
-                <button onClick={ () =>{
-                    setActiveModal(false)
-                
-                    settit("");
-                    settex("");
-
-                    setDay();
-                    setMonth();
-                    setYear();
-                }}>
-                    Cancelar
-                </button>
-
-                <button onClick={ () =>{
-                    setActiveModal(false)
-
-                    AddDoc();
-                    
-                }}>
-                    Adicionar
-                    
-                </button>
-            </div>
-            
-        </div>
+        </section>
     )
 
 }

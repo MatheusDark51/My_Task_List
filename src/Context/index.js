@@ -11,7 +11,7 @@ function UserContext({children}){
     const[list,setList] = useState([])
 
     const[tit,settit] = useState("")
-    const[tex,settex] = useState("")
+
     const[day,setDay] = useState("")
     const[month,setMonth] = useState("")
     const[year,setYear] = useState("")
@@ -26,7 +26,6 @@ function UserContext({children}){
                 l[i] = {
                     id:docs.id,
                     titulo:docs.data().Titulo,
-                    texto:docs.data().Texto,
                     day:docs.data().Day,
                     month:docs.data().Month,
                     year:docs.data().Year
@@ -42,14 +41,13 @@ function UserContext({children}){
     }
 
     async function AddDoc(){
-        if(tit ==="" || tex === "" || day === ""){
+        if(tit ==="" || day === ""){
             console.log("Insira um texto valido")
         }
         else{
             await firebase.firestore().collection("Tasks")
             .add({
                 Titulo:tit,
-                Texto:tex,
 
                 Day:day,
                 Month:month,
@@ -61,7 +59,6 @@ function UserContext({children}){
             setYear("")
 
             settit("")
-            settex("")
         }
     }
 
@@ -73,7 +70,6 @@ function UserContext({children}){
             console.log(result)
         })
         settit("")
-        settex("")
     }
 
     async function Delete(id) {
@@ -86,7 +82,7 @@ function UserContext({children}){
         <myContext.Provider 
         value=
         {{
-            list,setList,tit,settit,tex,settex,
+            list,setList,tit,settit,
             day,setDay,month,setMonth,year,setYear,
             CarregarDados,AddDoc,Delete,Modify,
             activeModal,setActiveModal
