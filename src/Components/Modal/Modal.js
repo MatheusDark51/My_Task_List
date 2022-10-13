@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import {myContext} from "../../Context/index.js"
 import { FiArrowLeft,FiArrowRight } from "react-icons/fi";
-import style from "../../StylesSheets/style.css"
+import  "../../StylesSheets/style.css"
 
 function Modal(){
 
@@ -48,8 +48,8 @@ function Modal(){
         <section>
             <div className="Modal">
                 <div className="Text">
-                    <label> Titulo </label>
-                    <input placeholder="Digite o Titulo da Tarefa" 
+                    <label for="text" > Titulo </label>
+                    <input type="text" id="text" placeholder="Digite o Titulo da Tarefa" 
                         value={tit} 
                         onChange={(e) => {settit(e.target.value)}}
                     />
