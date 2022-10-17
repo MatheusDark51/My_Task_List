@@ -56,31 +56,39 @@ function Modal(){
                 </div>
 
                 <div>
-
-                    <FiArrowLeft className="Arrow" onClick={ () =>{
-                        if(current_Month <= 0){
-                            setCurrent_Month(all_month.length - 1)
-                            setCurrent_Year(current_Year - 1)
-                        }
-                        else{
-                            setCurrent_Month(current_Month - 1)
-                        }
-                    }} />
-
-                    <h3>{current_Year}</h3>
-
-                    <h1>{month_to_render}</h1>
-
-                    <FiArrowRight className="Arrow" onClick={ () =>{
+                    
+                    <div>
                         
-                        if(current_Month >= all_month.length - 1){
-                            setCurrent_Month(0)
-                            setCurrent_Year(current_Year + 1)
-                        }
-                        else{
-                            setCurrent_Month(current_Month + 1)
-                        }
-                    }} />
+                        <h3>{current_Year}</h3>
+
+                    </div>
+
+                    <div className="Size-Text">
+                            
+                        <FiArrowLeft className="Arrow" onClick={ () =>{
+                            if(current_Month <= 0){
+                                setCurrent_Month(all_month.length - 1)
+                                setCurrent_Year(current_Year - 1)
+                            }
+                            else{
+                                setCurrent_Month(current_Month - 1)
+                            }
+                        }} />
+
+                        <h1>{month_to_render}</h1>
+
+                        <FiArrowRight className="Arrow" onClick={ () =>{
+                            
+                            if(current_Month >= all_month.length - 1){
+                                setCurrent_Month(0)
+                                setCurrent_Year(current_Year + 1)
+                            }
+                            else{
+                                setCurrent_Month(current_Month + 1)
+                            }
+                        }} />
+
+                    </div>
 
                     <div className="Calendar">
                         {current_days.map((item) =>{
@@ -97,7 +105,7 @@ function Modal(){
                     </div>
                 </div>
 
-               <div>
+               <div className="Buttons">
                     <button onClick={ () =>{
                         setActiveModal(false)
                     

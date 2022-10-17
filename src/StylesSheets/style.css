@@ -1,6 +1,12 @@
 .Arrow{
     color: red;
 }
+.Size-Text{
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 section{
     background-color:rgba(250, 250, 250, 0.5) ;
     position: fixed;
@@ -14,9 +20,7 @@ section{
 }
 .Modal{
     width: 500px;
-    max-width: 500px;
-    height: 550px;
-    max-height: 550px;
+    height: 570px;
     text-align: center;
     background-color: blue;
 }
@@ -43,12 +47,17 @@ section{
 .Text {
     background-color: red;
     position: relative;
-    margin-top: ;
+    margin-top: 15px;
     left: 30%;
     width: 180px;
     height: 50px;
     display: block;
     justify-content:center;
-    align-items: center;
-    
+    align-items: center;   
+}
+.Buttons{
+    background-color: red;
+    margin-top: 10px;
+    display: flex;
+    justify-content:space-evenly;
 }
