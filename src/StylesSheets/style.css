@@ -1,16 +1,8 @@
-.Arrow{
-    color: red;
-}
-.Size-Text{
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
+
 section{
-    background-color:rgba(250, 250, 250, 0.5) ;
+    background-color:rgba(0, 0, 0, 0.9);
     position: fixed;
-    top: 0%;
+    top: -2%;
     right: 0%;
     width: 100vw;
     height: 100vh;
@@ -18,34 +10,35 @@ section{
     align-items: center;
     justify-content: center;
 }
+
+.Arrow{
+    color: red;
+    font-size: 30px;
+}
+
+.Size-Text{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .Modal{
+    border-radius: 15px;
+    border: #b10029 double 5px;
+    box-shadow: 0 0 0 transparent,
+    0 0 10px #b10029,
+    0 0 20px #f00038,
+    0 0 40px #b10029;
     width: 500px;
-    height: 570px;
+    height: 600px;
     text-align: center;
-    background-color: blue;
+    background-color: black;
+    
 }
-.Calendar{
-    width: 50%;
-    height: 50%;
-    display: inline-grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    background-color: #2196F3;
-    gap: 5px;
-    padding: 8px;
-}
-.Calendar :hover{
-    cursor: pointer;
-}
-.Calendar :active{
-    background-color: orange;
-}
-.Calendar div{
-    background-color: white;
-    width: 100%;
-    height: 100%;
-}
-.Text {
-    background-color: red;
+
+.Text{
+    border-radius: 5px;
+    background-color: rgb(76, 76, 76);
     position: relative;
     margin-top: 15px;
     left: 30%;
@@ -55,9 +48,83 @@ section{
     justify-content:center;
     align-items: center;   
 }
+
+.Calendar{
+    margin-top: 5px;
+    border-radius: 10px;
+    width: 50%;
+    height: 50%;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    background-color: rgb(21, 21, 21);
+    gap: 5px;
+    padding: 8px;
+}
+.Calendar div{
+    background-color: rgb(76, 76, 76);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.Calendar :hover{
+    cursor: pointer;
+}
+.Calendar :active{
+    background-color: rgb(101, 101, 101);
+}
+
 .Buttons{
-    background-color: red;
     margin-top: 10px;
     display: flex;
     justify-content:space-evenly;
+}
+.Buttons button{
+    background-color: rgb(36, 36, 36);
+    border: #b10029 solid 3px;
+    border-radius: 10px;
+    width: 80px;
+}
+.Buttons p{
+    position: relative;
+    font-size: 12px;
+}
+
+.Neon {
+    color: #ff5e7e;
+    text-shadow: 0 0 0 transparent,
+    0 0 10px #ff003c,
+    0 0 20px rgba(255, 0, 60, 0.5),
+    0 0 40px #ff003c, 
+    0 0 100px #ff003c, 
+    0 0 200px #ff003c, 
+    0 0 300px #ff003c, 
+    0 0 500px #ff003c, 
+    0 0 1000px #ff003c;
+}
+
+
+.Home{
+    margin: 0px;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+.Apresentação{
+    background-color: green;
+    text-align: center;
+}
+.Apresentação button{
+    background-color: #343434;
+    border: #ff003c solid 4px;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+    
+    box-shadow: 0 0 0 transparent,
+    0 0 5px #b10029,
+    0 0 10px #f00038;
+}
+.Apresentação button a{
+    text-decoration: none;
+    color: #ff5e7e;
 }

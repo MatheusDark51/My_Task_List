@@ -45,7 +45,7 @@ function Modal(){
     },[current_Month])
 
     return(
-        <section>
+        <section className="Neon">
             <div className="Modal">
                 <div className="Text">
                     <label for="text" > Titulo </label>
@@ -59,7 +59,7 @@ function Modal(){
                     
                     <div>
                         
-                        <h3>{current_Year}</h3>
+                        <h3 className="Font">{current_Year}</h3>
 
                     </div>
 
@@ -75,7 +75,7 @@ function Modal(){
                             }
                         }} />
 
-                        <h1>{month_to_render}</h1>
+                        <h1 className="Font">{month_to_render}</h1>
 
                         <FiArrowRight className="Arrow" onClick={ () =>{
                             
@@ -105,8 +105,8 @@ function Modal(){
                     </div>
                 </div>
 
-               <div className="Buttons">
-                    <button onClick={ () =>{
+               <div className="Buttons Neon">
+                    <button className="Neon" onClick={ () =>{
                         setActiveModal(false)
                     
                         settit("");
@@ -114,17 +114,21 @@ function Modal(){
                         setDay();
                         setMonth();
                         setYear();
+
                     }}>
-                        Cancelar
+
+                       <p>Cancelar</p>
+
                     </button>
 
-                    <button onClick={ () =>{
+                    <button className="Neon" onClick={ () =>{
                         setActiveModal(false)
 
                         AddDoc();
                         
                     }}>
-                        Adicionar
+
+                        <p>Adicionar</p>
                         
                     </button>
                 </div>
