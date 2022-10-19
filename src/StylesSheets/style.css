@@ -60,7 +60,7 @@ section{
     gap: 5px;
     padding: 8px;
 }
-.Calendar div{
+.Calendar > div{
     background-color: rgb(76, 76, 76);
     width: 100%;
     height: 100%;
@@ -102,29 +102,35 @@ section{
     0 0 1000px #ff003c;
 }
 
-
-.Home{
-    margin: 0px;
-    background-color: black;
-    height: 100vh;
-    width: 100vw;
-}
-.Apresentação{
+.Names{
     background-color: green;
+    height: 50px;
+    padding-bottom: 15px;
+    display: inline-grid;
+    grid-template-columns: 310px 160px 192px 355px;
+    padding-left: 200px;
+    align-items: center;
+}
+.Home{
+    padding: 15px;
+    height: 100vh;
+    margin: 0px;
+    background-color: orange;
+}
+.Home > h1{
+    background-color: red;
     text-align: center;
 }
-.Apresentação button{
-    background-color: #343434;
-    border: #ff003c solid 4px;
-    border-radius: 5px;
-    width: 80px;
-    height: 50px;
-    
-    box-shadow: 0 0 0 transparent,
-    0 0 5px #b10029,
-    0 0 10px #f00038;
+.Data{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    height: 60px;
+    background-color: red;
 }
-.Apresentação button a{
-    text-decoration: none;
-    color: #ff5e7e;
+.Data > h2{
+    background-color: green;
+    width:250px;
+    max-height: 60px;
+    overflow-y: hidden;
 }

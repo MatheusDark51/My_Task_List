@@ -20,25 +20,30 @@ function ListaDeDados(){
     })
 
     return(
-        <div>
-            <h1>Lista</h1>
-           
+        <div className="Home">
+
+            <h1>List</h1>
+
+            <div className="Names">
+                <h2>Task Name</h2>
+                <h3>Day</h3>
+                <h3>Month</h3>
+                <h3>Year</h3>
+            </div>
             <div>
                 {list.map((item,index) =>{
                     return(
-                        <div key={index}>
+                        <div className="Data" key={index}>
                             <h2>{item.titulo}</h2>
-                            <p>{item.texto}</p>
 
                             <h3>{item.day}</h3>
                             <h3>{item.month}</h3>
                             <h3>{item.year}</h3>
 
                             <button onClick={ () =>{
-
-                                Delete(item.id)    
+                                Delete(item.id)
                             }}>
-                                Delete
+                                <p>Delete</p>
                             </button>
                         </div>
                     )
