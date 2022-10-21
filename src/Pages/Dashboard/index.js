@@ -8,7 +8,7 @@ function ListaDeDados(){
     const
     {
         list,setList,CarregarDados,
-        Delete,Modify,activeModal,
+        Delete,activeModal,
         setActiveModal
 
     } = useContext(myContext);
@@ -21,10 +21,11 @@ function ListaDeDados(){
 
     return(
         <div className="Home">
+            <div>
+                <h1 className="Title Neon">List</h1>
+            </div>
 
-            <h1>List</h1>
-
-            <div className="Names">
+            <div className="Names Neon">
                 <h2>Task Name</h2>
                 <h3>Day</h3>
                 <h3>Month</h3>
@@ -33,7 +34,7 @@ function ListaDeDados(){
             <div>
                 {list.map((item,index) =>{
                     return(
-                        <div className="Data" key={index}>
+                        <div className="Data Neon" key={index}>
                             <h2>{item.titulo}</h2>
 
                             <h3>{item.day}</h3>
@@ -43,7 +44,7 @@ function ListaDeDados(){
                             <button onClick={ () =>{
                                 Delete(item.id)
                             }}>
-                                <p>Delete</p>
+                                <p >Delete</p>
                             </button>
                         </div>
                     )
@@ -52,7 +53,7 @@ function ListaDeDados(){
 
             <div>
                 
-                <BiPlus onClick={ () =>{
+                <BiPlus className="Plus" onClick={ () =>{
 
                     setActiveModal(true)
 

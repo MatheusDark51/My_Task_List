@@ -49,7 +49,7 @@ function Modal(){
             <div className="Modal">
                 <div className="Text">
                     <label for="text" > Titulo </label>
-                    <input maxLength={30} type="text" id="text" placeholder="Digite o Titulo da Tarefa" 
+                    <input maxLength={18} type="text" id="text" placeholder="Digite o Titulo da Tarefa" 
                         value={tit} 
                         onChange={(e) => {settit(e.target.value)}}
                     />

@@ -62,16 +62,6 @@ function UserContext({children}){
         }
     }
 
-    async function Modify(id){
-        await firebase.firestore().collection("Tasks")
-        .doc(id)
-        .get()
-        .then((result) =>{
-            console.log(result)
-        })
-        settit("")
-    }
-
     async function Delete(id) {
         await firebase.firestore().collection("Tasks")
         .doc(id)
@@ -84,7 +74,7 @@ function UserContext({children}){
         {{
             list,setList,tit,settit,
             day,setDay,month,setMonth,year,setYear,
-            CarregarDados,AddDoc,Delete,Modify,
+            CarregarDados,AddDoc,Delete,
             activeModal,setActiveModal
         }}>
 

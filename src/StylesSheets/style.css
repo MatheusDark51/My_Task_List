@@ -1,4 +1,8 @@
 
+*{
+    padding: 0px;
+    margin: 0px;
+}
 section{
     background-color:rgba(0, 0, 0, 0.9);
     position: fixed;
@@ -30,7 +34,7 @@ section{
     0 0 20px #f00038,
     0 0 40px #b10029;
     width: 500px;
-    height: 600px;
+    height: 310px;
     text-align: center;
     background-color: black;
     
@@ -102,35 +106,76 @@ section{
     0 0 1000px #ff003c;
 }
 
+
 .Names{
-    background-color: green;
     height: 50px;
-    padding-bottom: 15px;
+    margin-top: 5px;
     display: inline-grid;
-    grid-template-columns: 310px 160px 192px 355px;
+    grid-template-columns: 330px 180px 200px 370px;
     padding-left: 200px;
     align-items: center;
+   
 }
 .Home{
     padding: 15px;
     height: 100vh;
-    margin: 0px;
-    background-color: orange;
+    width: 100vw;
+    background-color: rgb(4, 4, 4);
 }
-.Home > h1{
-    background-color: red;
+.Title{
     text-align: center;
+    border-radius: 5px;
 }
 .Data{
+    margin-top: 20px;
     display: flex;
     justify-content:space-evenly;
     align-items: center;
     height: 60px;
-    background-color: red;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+
+    box-shadow: 0 0 0 transparent,
+    0 0 10px #b10029,
+    0 0 20px #f00038,
+    0 0 40px #b10029;
 }
 .Data > h2{
-    background-color: green;
     width:250px;
     max-height: 60px;
-    overflow-y: hidden;
+}
+.Data > button{
+    background-color: rgb(5, 5, 5);
+    width: 50px;
+    height: 30px;
+    border: #3b0101 double 2px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 transparent,
+    0 0 5px #b10029,
+    0 0 10px #b10029;
+}
+.Data > button > p{
+    color: #ff5e7e;
+    text-shadow: 0 0 0 transparent,
+    0 0 10px #ff003c,
+    0 0 20px rgba(255, 0, 60, 0.5),
+    0 0 40px #ff003c, 
+    0 0 100px #ff003c, 
+    0 0 200px #ff003c, 
+    0 0 300px #ff003c, 
+    0 0 500px #ff003c, 
+    0 0 1000px #ff003c;
+}
+.Plus{
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    color: red;
+    border: #b10029 solid 5px;
+    border-radius: 5px;
+    background-color: rgb(6, 6, 6);
+
+    box-shadow: 0 0 0 transparent,
+    0 0 4px #b10029,
+    0 0 12px #f00038;
 }
